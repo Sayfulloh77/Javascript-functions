@@ -1,0 +1,11 @@
+.success {
+    border: 2px solid green;
+    box-shadow: 0px 0px 10px 5px greenyellow;
+}
+.error {
+     border: 2px solid red;
+     box-shadow: 0px 0px 10px 5px red;
+}
+.text {
+    color: red;
+}
