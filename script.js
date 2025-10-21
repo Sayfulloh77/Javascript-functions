@@ -35,8 +35,12 @@ const text = document.querySelector("#text"),
       eye.addEventListener('click', ()=> {
           if (password.getAttribute('type')==='password') {
             password.setAttribute('type','text')
+            eye.setAttribute('class',"bg-success px-4 d-flex justify-content-center align-items-center text-light rounded-4")
+            eye.innerHTML = `<i class="bi bi-eye-slash-fill"></i>`
           }else {
             password.setAttribute('type','password')
+            eye.setAttribute('class',"bg-primary px-4 d-flex justify-content-center align-items-center text-light rounded-4")
+            eye.innerHTML = ` <i class="bi bi-eye-fill"></i>`
           }
       })
 
