@@ -49,7 +49,7 @@ const text = document.querySelector("#text"),
         let passwordValue = password.value.trim()
          
         // Check name: only letters allowed (A-Z or a-z)
-        if (!/^[A-Za-z]+$/.test(loginValue)) {
+       /* if (!/^[A-Za-z]+$/.test(loginValue)) {
             login.value = "" // clear input
             login.placeholder = "Only letters allowed!";
             return;
@@ -58,7 +58,31 @@ const text = document.querySelector("#text"),
         if(!/^[0-9]+$/.test(passwordValue)) {
             password.value = ""
             password.placeholder = "Only passwords"
+            password.placeholder.style.cssText = ""
             return
+        }*/
+          if (!/^[A-Za-z]+$/.test(loginValue) || !/^[0-9]+$/.test(passwordValue)) {
+            login.value = "" // clear input
+            text.innerHTML = "Unsuccessful"
+            text.setAttribute('class',"text-center text-danger")
+            return;
+        }else {
+            password.value = "" // clear input
+            text.innerHTML = "Login Successfully"
+            text.setAttribute('class', "text-center text-success")
         }
-        alert("Login successfully")
+            //alert("Login successfully")
       })
+
+     /* submit.addEventListener('click', ()=> {
+        if(login.value.trim().length != 0 && password.value.trim().length !=0) {
+          text.innerHTML = "SUCCESSFUL";
+          text.setAttribute('class',"text-center text-success")
+        }else {
+          text.innerHTML = "UNSUCCESSFUL"
+          text.setAttribute('class','text-center text-danger')
+        }
+      })*/
+
+  let contain = document.querySelector("#contain")
+  let encourage = document.querySelector("#encourage")

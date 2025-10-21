@@ -1,3 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(400deg,rgb(51, 156, 182),blue,rgb(51, 156, 182));
+    background: rgb(51, 156, 182);
+    background-attachment: fixed;/* Optional: keeps background fixed on scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
 .success {
     border: 2px solid green;
     box-shadow: 0px 0px 10px 5px greenyellow;
