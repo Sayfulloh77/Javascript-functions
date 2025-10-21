@@ -105,10 +105,20 @@ const text = document.querySelector("#text"),
   //console.log(div)
 
   let input = document.createElement("input")// making dynamic element
+ 
   input.setAttribute('type',"text")
   input.setAttribute(`class`,"form-control mb-3")// 'mb-3' adds margin-bottom spacing
   input.style.cssText = "width: 900px; height: 50px;"
-  
+
+  input.addEventListener(`blur`,()=> {
+    let inputValue = input.value.trim()
+    if (inputValue.length == 0) {
+      input.setAttribute('class',"form-control p-3 m-2 error")
+    }else {
+       input.setAttribute('class',"form-control p-3 m-2 success")
+    }
+  })
+
   let btn = document.createElement("button")// making dynamic element
   btn.setAttribute(`class`,"btn btn-primary ")// blue button, full width
   btn.style.cssText =  "width: 200px; height: 50px"
@@ -123,8 +133,11 @@ const text = document.querySelector("#text"),
   control.style.alignItems = "center";
   control.style.gap = "10px";
   control.style.marginTop = "50px";
-
-  btn.addEventListener('click',()=> {
-    div.innerHTML = input.value.trim()
-    
+    btn.addEventListener('click',()=> {
+      let inputValue = input.value.trim()
+      if (inputValue.length !== 0) {
+      div.innerHTML =  inputValue
+      }else {
+         div.innerHTML = "iltimos Soz kiriting"
+      }
   })
