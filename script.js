@@ -1,5 +1,8 @@
 // getAttribute, setAttribute, Dynamic elements creat , Events, window global, objects
 "use strict"
+
+//const { createElement } = require("react");
+
 /*const text = document.getElementById("text")
 const login = document.getElementById("login")
 const password = document.getElementById("password")
@@ -84,5 +87,44 @@ const text = document.querySelector("#text"),
         }
       })*/
 
-  let contain = document.querySelector("#contain")
-  let encourage = document.querySelector("#encourage")
+
+        //static elements
+
+
+        //dynamic elements create
+        //dynamic elements
+  let control = document.querySelector("#control")
+  let extra = document.querySelector("#extra")
+
+  let div = document.createElement("div") // making dynamic element
+  div.setAttribute('class',"card bg-info p-3 text-center text-danger ")
+  div.innerHTML = `<h3>SOME TEXT</h3>`
+
+  extra.appendChild(div)
+
+  //console.log(div)
+
+  let input = document.createElement("input")// making dynamic element
+  input.setAttribute('type',"text")
+  input.setAttribute(`class`,"form-control mb-3")// 'mb-3' adds margin-bottom spacing
+  input.style.cssText = "width: 900px; height: 50px;"
+  
+  let btn = document.createElement("button")// making dynamic element
+  btn.setAttribute(`class`,"btn btn-primary ")// blue button, full width
+  btn.style.cssText =  "width: 200px; height: 50px"
+  btn.innerHTML = "Submit"
+ 
+
+
+  control.appendChild(input)
+  control.appendChild(btn)
+
+ // control.style.display = "flex";
+  control.style.alignItems = "center";
+  control.style.gap = "10px";
+  control.style.marginTop = "50px";
+
+  btn.addEventListener('click',()=> {
+    div.innerHTML = input.value.trim()
+    
+  })
