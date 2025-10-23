@@ -5,7 +5,12 @@ const show =  document.querySelector("#show");
 const container = document.querySelector("#container")
 
 show.addEventListener('click',()=> {
-    container.setAttribute('class',"d-none")
+  if (container.classList.contains("d-none")) {
+    container.classList.remove("d-none") //show
+  }else {
+    container.classList.add("d-none")//hide
+  }
+  // container.classList.add("d-none") //hide
 })
 
 
