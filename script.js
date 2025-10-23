@@ -1,6 +1,14 @@
 // getAttribute, setAttribute, Dynamic elements creat , Events, window global, objects
 "use strict"
 
+const show =  document.querySelector("#show");
+const container = document.querySelector("#container")
+
+show.addEventListener('click',()=> {
+    container.setAttribute('class',"d-none")
+})
+
+
 //const { createElement } = require("react");
 
 /*const text = document.getElementById("text")
@@ -108,6 +116,7 @@ const text = document.querySelector("#text"),
  
   input.setAttribute('type',"text")
   input.setAttribute(`class`,"form-control mb-3")// 'mb-3' adds margin-bottom spacing
+  input.setAttribute('placeholder', "Enter element name")
   input.style.cssText = "width: 900px; height: 50px;"
 
   input.addEventListener(`blur`,()=> {
@@ -128,16 +137,43 @@ const text = document.querySelector("#text"),
 
   control.appendChild(input)
   control.appendChild(btn)
+  //control.prepend(btn) prepend is similar with appendChild but prepend make your element above
 
  // control.style.display = "flex";
   control.style.alignItems = "center";
   control.style.gap = "10px";
   control.style.marginTop = "50px";
+  
     btn.addEventListener('click',()=> {
       let inputValue = input.value.trim()
       if (inputValue.length !== 0) {
+
+      let div = document.createElement("div") // making dynamic element
+      div.setAttribute('class',"card bg-info p-3  text-center text-danger ")
+      div.innerHTML = `<h3>SOME TEXT</h3>`
+
+  extra.appendChild(div)
+
+
       div.innerHTML =  inputValue
+      input.value = ""
       }else {
-         div.innerHTML = "iltimos Soz kiriting"
+         input.setAttribute('placeholder',"Please enter some text")
+         input.setAttribute('class',"form-control p-3 m-2 error ")
       }
   })
+
+
+ /* btn.addEventListener('click',()=> {
+      let inputValue = input.value.trim()
+      if (inputValue.length !== 0) {
+
+      div.innerHTML =  inputValue
+      input.value = ""
+      }else {
+         input.setAttribute('placeholder',"Please enter some text")
+         input.setAttribute('class',"form-control p-3 m-2 error ")
+      }
+  })*/
+
+ 
