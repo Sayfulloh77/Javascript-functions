@@ -1,17 +1,29 @@
-// getAttribute, setAttribute, Dynamic elements creat , Events, window global, objects
-"use strict"
+  // getAttribute, setAttribute, Dynamic elements creat , Events, window global, objects
+  "use strict"
 
-const show =  document.querySelector("#show");
-const container = document.querySelector("#container")
+  const show =  document.querySelector("#show");
+  const container = document.querySelector("#container")
 
+  show.addEventListener('click',()=> {
+    if (container.getAttribute("id") == "container") {
+      container.setAttribute('id','display')
+    }else {
+      container.setAttribute('id',"container")
+    }
+    // container.setAttribute('class',"card w-75 mx-auto mt-5 p-4 border-1 container")
+  })
+
+
+/*
 show.addEventListener('click',()=> {
-  if (container.classList.contains("d-none")) {
+  if (container.classList.contains("d-none")) { 
     container.classList.remove("d-none") //show
   }else {
     container.classList.add("d-none")//hide
   }
-  // container.classList.add("d-none") //hide
+  // container.classList.toggle("d-none") //   if element has d-none → removes it if element doesn’t → adds it
 })
+  */
 
 
 //const { createElement } = require("react");
